@@ -7,7 +7,7 @@ const debug = require("debug")("lncliweb:lightning");
 // expose the routes to our app with module.exports
 module.exports = function (protoPath, lndHost, lndCertPath, macaroonPath) {
 
-	process.env.GRPC_SSL_CIPHER_SUITES = "HIGH+ECDSA";
+	process.env.GRPC_SSL_CIPHER_SUITES = "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384";
 
 	const lnrpcDescriptor = grpc.load(protoPath);
 
